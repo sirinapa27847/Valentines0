@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s Day 💖</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* จดหมาย */
+.letter {
+    width: 400px;
+    height: 300px;
+    background: url('letter.png') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.letter.open {
+    transform: rotateX(20deg) scale(1.1);
+}
+
+/* หัวใจลอย */
+.heart {
+    position: absolute;
+    color: red;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Valentine’s Day 💖</h1>
+
+    <div class="letter" onclick="openLetter(this)"></div>
+
+    <p style="color:white;">Click to open the letter. 💌</p>
+</div>
+
+<!-- เพลง -->
+<audio id="music" src="music.mp3"></audio>
+
+<script>
+function openLetter(el) {
+    el.classList.add("open");
+
+    // เล่นเพลง
+    document.getElementById("music").play();
+
+    // ไปหน้าถัดไป
+    setTimeout(() => {
+        window.location.href = "VALENTINE'S.html";
+    }, 1200);
+}
+
+// สร้างหัวใจลอย
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}, 300);
+</script>
+
+</body>
+</html>

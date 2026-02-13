@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TO YOU 💖</title>
+
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffe6eb, #fff);
+    text-align: center;
+    padding: 100px;
+}
+.section {
+    margin: 30px 0;
+    padding: 32px;
+    border-radius: 32px;
+    background: white;
+    box-shadow: 0 5px 32px rgba(0,0,0,0.1);
+}
+img {
+    width: 30%;
+    border-radius: 32px;
+}
+h2 {
+    color: #ff4d6d;
+}
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 5s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>💖 HAPPY VALENTIN'S DAY 💖</h1>
+
+<div class="section">
+<h2>🌸 1 🌸</h2>
+<img src="ช่อดอกไม้.gif">
+<p>The day we first met was great</p>
+</div>
+
+<div class="section">
+<h2>☀️ 2 ☀️</h2>
+<img src="วัด.jpg">
+<p>I was very happy during the time I spent with you, and there were some sad times as well</p>
+</div>
+
+<div class="section">
+<h2>🍂 3 🍂</h2>
+<img src="รูปคู่.jpg">
+<p>I remember the first day I met you. I was wearing a black bikini, not a red one! Haha</p>
+</div>
+
+<div class="section">
+<h2>❄️ 4 ❄️</h2>
+<img src="หัวใจ.jpg">
+<p>Finally, I wish you a happy Valentine's Day</p>
+</div>
+
+<h2>❤️ I love you ❤️</h2>
+
+<!-- 🎵 เพลง -->
+<audio id="bgMusic" loop>
+    <source src="Love Story.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ⚡ JavaScript (ใส่ตรงนี้!) -->
+<script>
+window.addEventListener("load", function() {
+    const music = document.getElementById("bgMusic");
+
+    music.play().catch(() => {
+        document.addEventListener("click", () => {
+            music.play();
+        }, { once: true });
+    });
+});
+</script>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>

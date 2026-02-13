@@ -65,14 +65,18 @@ h1 {
 </div>
 
 <!-- เพลง -->
-<audio id="music" src="music.mp3"></audio>
+<audio autoplay loop>
+  <source src="Love Story.mp3" type="audio/mpeg">
+</audio>
+   <audio id="bgmusic" loop>
+  <source src="Love Story.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-function openLetter(el) {
-    el.classList.add("open");
-
-    // เล่นเพลง
-    document.getElementById("music").play();
+document.addEventListener("click", function () {
+  document.getElementById("bgmusic").play();
+});
+</script>
 
     // ไปหน้าถัดไป
     setTimeout(() => {
@@ -96,3 +100,4 @@ setInterval(() => {
 </body>
 
 </html>
+

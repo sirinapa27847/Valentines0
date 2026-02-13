@@ -78,9 +78,18 @@ h2 {
 <h2>❤️ I love you ❤️</h2>
 
 <!-- 🎵 เพลง -->
-<audio id="bgMusic" loop>
-    <source src="Love Story.mp3" type="audio/mpeg">
+<audio autoplay loop>
+  <source src="Love Story.mp3" type="audio/mpeg">
 </audio>
+    <audio id="bgmusic" loop>
+  <source src="Love Story.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", function () {
+  document.getElementById("bgmusic").play();
+});
+</script>
 
 <!-- ⚡ JavaScript (ใส่ตรงนี้!) -->
 <script>
@@ -118,3 +127,4 @@ setInterval(createHeart, 300);
 </body>
 
 </html>
+
